@@ -13,13 +13,13 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
 eval "$(~/.zsh/scripts/venv_finder.sh)"
 
-eval "$(~/.zsh/scripts/install.sh)"
-
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
 # Loading ZI
 source "${zi_home}/bin/zi.zsh"
+
+eval "$(~/.zsh/scripts/install.sh)"
 
 # Using normal load works
 zi depth=1 lucid nocd for \

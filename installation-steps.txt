@@ -1,6 +1,2 @@
-git clone https://github.com/z-shell/zi.git ~/.zsh/zi
-ln -s ~/.zshrc ~/.zsh/zshrc
-sh -c "$(curl -fsSL https://git.io/get-zi)" -- -i skip -b main
-curl -sS https://webinstall.dev/zoxide | bash
-pip3 install thefuck --user
+git clone https://github.com/Evangelospro/ZSHRC ~/.zsh
 exec zsh

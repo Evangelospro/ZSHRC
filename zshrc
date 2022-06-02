@@ -8,6 +8,17 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# check if the directory ~/.zsh exists else install everything else
+if [ ! -d ~/.zsh ]; then
+    echo "Installing everything else (probably I came here from xxh)"
+    git clone https://github.com/z-shell/zi.git ~/.zsh/zi
+    ln -s ~/.zshrc ~/.zsh/zshrc
+    sh -c "$(curl -fsSL https://git.io/get-zi)" -- -i skip -b main
+    curl -sS https://webinstall.dev/zoxide | bash
+    pip3 install thefuck --user
+    exec zsh
+fi
+
 # evaluting some useful commands
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
@@ -40,6 +51,12 @@ zi light MichaelAquilina/zsh-auto-notify
 zi ice wait
 zi light marlonrichert/zsh-autocomplete
 
+zi ice wait
+zi light tom-doerr/zsh_codex
+
+zi ice wait
+zi light RobSis/zsh-completion-generator
+
 # autocompletions addition + fast-syntax-highlighting + zsh-autosuggestions
 zi wait lucid for \
  atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
@@ -70,7 +87,8 @@ source ~/.zsh/aliases.zsh
 HISTFILE=~/.zsh/zsh_history.zsh
 SAVEHIST=1000000000
 HISTSIZE=99999
-## History command configuration
+
+# History command configuration
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
@@ -78,6 +96,12 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
+
+# Other setopts
+setopt EXTENDED_GLOB
+setopt GLOBDOTS
+setopt NOTIFY
+setopt AUTOCD
 
 source ~/.zsh/functions.zsh
 

@@ -1,7 +1,9 @@
 #!/bin/bash
 if [ -z "$(which zi)" ]; then
-  echo "Installing zi"
+  export zi_home="$HOME/.zsh"
+  echo "Installing zi in ${zi_home}/bin"
   git clone https://github.com/z-shell/zi.git "${zi_home}/bin"
+  source ~/.zshrc
   zi self-update
   installing=true
 fi

@@ -1,6 +1,7 @@
 if [ -z "$(which zi)" ]; then
   echo "Installing zi"
-  git clone https://github.com/z-shell/zi.git ~/.zsh/.zi
+  sh -c "$(curl -fsSL https://git.io/get-zi)" -- -i skip -b main
+  mv ~/.zi ~/.zsh/.zi
   installing=true
 fi
 if [ -z "$(which zoxide)" ]; then

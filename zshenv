@@ -23,4 +23,4 @@ export PATH="$PATH:$GOPATH/bin"
 export _ZO_DATA_DIR="/home/evangelospro/.zsh/zoxide"
 skip_global_compinit=1
 
-export zi_home="$HOME/.zsh/.zi"
+export zi_home="$HOME/.zsh"

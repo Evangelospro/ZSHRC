@@ -1,3 +1,4 @@
+#!/bin/bash
 randomNum=$((1 + $RANDOM % 2))
 if [ $randomNum -eq 1 ]; then
   figlet -f Bloody Evangelospro|lolcat

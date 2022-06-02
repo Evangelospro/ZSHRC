@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ -z "$(which zi)" ]; then
   echo "Installing zi"
   sh -c "$(curl -fsSL https://git.io/get-zi)" -- -i skip -b main

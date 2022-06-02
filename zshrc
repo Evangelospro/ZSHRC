@@ -8,21 +8,32 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# check if the directory ~/.zsh exists else install everything else
-if [ ! -d ~/.zsh ]; then
-    echo "Installing everything else (probably I came here from xxh)"
-    git clone https://github.com/z-shell/zi.git ~/.zsh/zi
-    ln -s ~/.zshrc ~/.zsh/zshrc
-    sh -c "$(curl -fsSL https://git.io/get-zi)" -- -i skip -b main
-    curl -sS https://webinstall.dev/zoxide | bash
-    pip3 install thefuck --user
-    exec zsh
-fi
-
 # evaluting some useful commands
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
 eval "$(~/.zsh/scripts/venv_finder.sh)"
+
+if [ -z "$(which zi)" ]; then
+  echo "Installing zi"
+  git clone https://github.com/z-shell/zi.git ~/.zsh/zi
+  installing=true
+fi
+if [ -z "$(which zoxide)" ]; then
+  echo "Installing zoxide"
+  curl -sS https://webinstall.dev/zoxide | bash
+  installing=true
+fi 
+if [ -z "$(which fuck)" ]; then
+  echo "Installing thefuck"
+  pip3 install thefuck --user
+  installing=true
+fi
+# check if installing is true
+if [ "$installing" = true ]; then
+  echo "Symlinking and reloading shell"
+  ln -s ~/.zshrc ~/.zsh/zshrc
+  exec zsh
+fi
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"

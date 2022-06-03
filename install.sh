@@ -15,13 +15,13 @@ if [ -f /usr/bin/apt ]; then
     sudo apt update
     sudo apt install -y $packages
     lsd_version=$(get_latest_release "Peltoche/lsd") 
-    wget "https://github.com/Peltoche/lsd/releases/download/$lsd_version/lsd-amd64$_lsd_version_amd64.deb"
-    sudo dpkg -i lsd-amd64$_lsd_version_amd64.deb
+    wget "https://github.com/Peltoche/lsd/releases/download/"$lsd_version"/lsd-amd64"$_lsd_version"_amd64.deb"
+    sudo dpkg -i "lsd-amd64"$_lsd_version"_amd64.deb"
 
 # else check if arch
 elif [ -f /etc/arch-release ]; then
     sudo pacman -Syy
-    sudo pacman -Sy $packages lsd``
+    sudo pacman -Sy $packages lsd
 fi
 
 # Figlet fonts

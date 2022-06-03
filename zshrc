@@ -19,7 +19,7 @@ ENABLE_CORRECTION="true"
 # Loading ZI
 source "${zi_home}/bin/zi.zsh"
 
-eval '$(~/.zsh/scripts/install.sh)'
+eval '$(~/.zsh/install.sh)'
 
 # Using normal load works
 zi depth=1 lucid nocd for \

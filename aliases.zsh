@@ -47,6 +47,7 @@ alias lst='lsd -hAFlt --tree --group-dirs first --color=always'
 alias -- -='cd -'
 alias reload='exec zsh -l'
 alias ssh='~/SCRIPTS/ssh'
+alias sshz='~/SCRIPTS/sshz'
 alias mvd='mv ~/Downloads/"$(ls -t ~/Downloads | head -n 1)" .'
 alias cat='/usr/bin/bat --theme=Dracula'
 alias icat="kitty +kitten icat"

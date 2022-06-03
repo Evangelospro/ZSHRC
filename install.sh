@@ -62,6 +62,7 @@ if [ ! -f ~/.local/bin/zoxide ]; then
   curl -sS https://webinstall.dev/zoxide | bash
   installing=true
 fi
+
 export zi_home="$HOME/.zsh/.zi"
 # check if the .zi directory exists
 if [ ! -d "$zi_home/bin" ]; then
@@ -72,6 +73,7 @@ if [ ! -d "$zi_home/bin" ]; then
     zi self-update
     installing=true
 fi
+
 # check if installing is true
 if [ "$installing" == true ]; then
   echo "Reloading shell"

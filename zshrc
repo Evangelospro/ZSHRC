@@ -5,13 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.zsh/p10k.zsh.
+[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 
 # evaluting some useful commands
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
-eval "$(~/.zsh/scripts/venv_finder.sh)"
+eval '$(~/.zsh/scripts/venv_finder.sh)'
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"

@@ -3,8 +3,30 @@ ln -s ~/.zsh/zshrc ~/.zshrc
 ln -s ~/.zsh/zshenv ~/.zshenv
 
 get_latest_release() {
+# find the computer architecture
+  arch=$(uname -m)
+  case $arch in
+      x86_64)
+          arch="amd64"
+          ;;
+      armv6l)
+          arch="arm6l"
+          ;;
+      armv7l)
+          arch="arm7l"
+          ;;
+      aarch64)
+          arch="arm64"
+          ;;
+      *)
+          echo "Unknown architecture: $arch"
+          exit 1
+          ;;
+  esac
 curl -s https://api.github.com/repos/$1/releases/latest \
 | grep "browser_download_url.*deb" \
+| grep $arch \
+| grep -v "musl" \
 | cut -d : -f 2,3 \
 | tr -d \" \
 | wget -qi -

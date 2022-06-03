@@ -2,21 +2,22 @@
 ln -s ~/.zsh/zshrc ~/.zshrc
 ln -s ~/.zsh/zshenv ~/.zshenv
 
-# check if it is debian then use apt
-
 get_latest_release() {
-  curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
-    grep '"tag_name":' |                                            # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+curl -s https://api.github.com/repos/$1/releases/latest \
+| grep "browser_download_url.*deb" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi -
 }
 
+# check if it is debian then use apt
 packages="zsh curl figlet lolcat neofetch python3-pip"
 if [ -f /usr/bin/apt ]; then
     sudo apt update
-    sudo apt install -y $packages
-    lsd_version=$(get_latest_release "Peltoche/lsd") 
-    wget "https://github.com/Peltoche/lsd/releases/download/"$lsd_version"/lsd-amd64"$_lsd_version"_amd64.deb"
-    sudo dpkg -i "lsd-amd64"$_lsd_version"_amd64.deb"
+    sudo apt install -y $packages python-is-python3
+    get_latest_release "Peltoche/lsd"
+    sudo dpkg -i "lsd*"
+    rm "lsd*"
 
 # else check if arch
 elif [ -f /etc/arch-release ]; then

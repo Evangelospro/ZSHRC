@@ -1,3 +1,3 @@
 #!/bin/bash
-/usr/bin/clear
+# /usr/bin/clear
 ~/.zsh/scripts/banner.sh

@@ -19,7 +19,7 @@ ENABLE_CORRECTION="true"
 # Loading ZI
 source "${zi_home}/.zi/bin/zi.zsh"
 
-eval "$(~/.zsh/scripts/install.sh)"
+# eval "$(~/.zsh/scripts/install.sh)"
 
 # Using normal load works
 zi depth=1 lucid nocd for \
@@ -98,4 +98,5 @@ source ~/.zsh/functions.zsh
 
 # source ~/.zsh/themes/dracula.zsh
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 ~/.zsh/scripts/clear.sh

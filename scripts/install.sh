@@ -12,10 +12,12 @@ if [ ! -f ~/.local/bin/zoxide ]; then
   installing=true
 fi
 
-export zi_home="$HOME/.zsh"
+export zi_home="$HOME/.zsh/.zi"
 # check if the .zi directory exists
 if [ ! -d "$zi_home/bin" ]; then
+    ln -s ~/.zsh/zshenv ~/.zshenv
     echo "Installing zi in ${zi_home}/bin"
+    mkdir -p "$zi_home/bin"
     git clone https://github.com/z-shell/zi.git "${zi_home}/bin"
     source ~/.zshrc
     zi self-update
@@ -25,6 +27,7 @@ fi
 # check if installing is true
 if [ "$installing" = true ]; then
   echo "Symlinking and reloading shell"
+  ln -s ~/.zsh/zshenv ~/.zshenv
   ln -s ~/.zsh/zshrc ~/.zshrc
   exec zsh
 fi

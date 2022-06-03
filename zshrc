@@ -17,7 +17,7 @@ eval "$(~/.zsh/scripts/venv_finder.sh)"
 ENABLE_CORRECTION="true"
 
 # Loading ZI
-source "${zi_home}/.zi/bin/zi.zsh"
+source "${zi_home}/bin/zi.zsh"
 
 # eval "$(~/.zsh/scripts/install.sh)"
 

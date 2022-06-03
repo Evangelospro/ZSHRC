@@ -1,12 +1,19 @@
 #!/bin/bash
-ln -s ~/.zsh/zshenv ~/.zshenv
-ln -s ~/.zsh/zshrc ~/.zshrc
-pip3 freeze |grep -q thefuck
-if [ $? -eq 1 ]; then
-  echo "Installing thefuck"
-  pip3 install thefuck --user
-  installing=true
+# check if it ubuntu then use apt
+packages="zsh curl figlet lolcat neofetch python3-pip"
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" = "ubuntu" ]; then
+        sudo apt update
+        sudo apt install -y $packages
+    fi
+# else check if arch
+elif [ -f /etc/arch-release ]; then
+    sudo pacman -Syy
+    sudo pacman -Sy $packages
 fi
+ln -s ~/.zsh/zshenv ~/.zshenv
+echo "Installing thefuck and notify send"
 # check if the binary file exists .local/bin/zoxide
 if [ ! -f ~/.local/bin/zoxide ]; then
   echo "Installing zoxide"
@@ -26,5 +33,5 @@ fi
 # check if installing is true
 if [ "$installing" = true ]; then
   echo "Symlinking and reloading shell"
-  exec zsh
+  zsh
 fi

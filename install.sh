@@ -1,4 +1,7 @@
 #!/bin/bash
+ls -s ~/.zsh/zshrc ~/.zshrc
+ln -s ~/.zsh/zshenv ~/.zshenv
+
 # check if it ubuntu then use apt
 packages="zsh curl figlet lolcat neofetch python3-pip"
 if [ -f /etc/os-release ]; then

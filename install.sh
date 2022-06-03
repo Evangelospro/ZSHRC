@@ -38,8 +38,8 @@ if [ -f /usr/bin/apt ]; then
     sudo apt update
     sudo apt install -y $packages python-is-python3
     get_latest_release "Peltoche/lsd"
-    sudo dpkg -i "lsd*"
-    rm "lsd*"
+    sudo dpkg -i lsd*
+    rm lsd*
 
 # else check if arch
 elif [ -f /etc/arch-release ]; then

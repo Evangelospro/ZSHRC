@@ -33,10 +33,11 @@ curl -s https://api.github.com/repos/$1/releases/latest \
 }
 
 # check if it is debian then use apt
-packages="zsh curl figlet lolcat neofetch python3-pip"
+arch_packages="zsh curl figlet lolcat neofetch python3-pip gobject-introspection lsd"
+debian_packages="zsh curl figlet lolcat neofetch python3-pip libcairo2-dev libgirepository1.0-dev python-is-python3"
 if [ -f /usr/bin/apt ]; then
     sudo apt update
-    sudo apt install -y $packages python-is-python3
+    sudo apt install -y $packages
     get_latest_release "Peltoche/lsd"
     sudo dpkg -i lsd*
     rm lsd*
@@ -44,7 +45,7 @@ if [ -f /usr/bin/apt ]; then
 # else check if arch
 elif [ -f /etc/arch-release ]; then
     sudo pacman -Syy
-    sudo pacman -Sy $packages lsd
+    sudo pacman -Sy $packages
 fi
 
 # Figlet fonts
@@ -74,5 +75,5 @@ fi
 # check if installing is true
 if [ "$installing" == true ]; then
   echo "Reloading shell"
-  exec zsh
+  zsh
 fi

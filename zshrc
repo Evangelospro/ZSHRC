@@ -19,7 +19,7 @@ ENABLE_CORRECTION="true"
 # Loading ZI
 source "${zi_home}/bin/zi.zsh"
 
-# eval "$(~/.zsh/scripts/install.sh)"
+eval '$(~/.zsh/scripts/install.sh)'
 
 # Using normal load works
 zi depth=1 lucid nocd for \
@@ -36,7 +36,7 @@ zi ice wait
 zi light MichaelAquilina/zsh-you-should-use
 
 zi ice wait
-zi light MichaelAquilina/zsh-auto-notify
+zi light MichaelAquilina/zsh-auto-notify # requires a gui server like xorg can't run on servers
 
 # ZSH AUTOCOMPLETION
 zi ice wait

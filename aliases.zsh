@@ -13,7 +13,7 @@ alias pwndocker='~/SCRIPTS/CTF\ Automation/pwndocker.sh'
 alias pwnsetup='python3 ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/pwnsetup'
 alias penelope='python3 ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/penelope/penelope.py -r ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/penelope/extras/penelope.conf'
 alias cerbrutus='python3 ~/.local/bin/cerbrutus/cerbrutus.py'
-alias autorecon='sudo python3 ~/Desktop/CTF/CTF-TOOLS/AutoRecon/autorecon.py --dirbuster.tool gobuster --dirbuster.wordlist /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt --only-scans-dir --single-target'
+alias autorecon='sudo python3 ~/Desktop/CTF/CTF-TOOLS/AutoRecon/autorecon.py --dirbuster.tool feroxbuster --dirbuster.wordlist /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt --only-scans-dir --single-target'
 alias rot13='tr '\''A-Za-z'\'' '\''N-ZA-Mn-za-m'\'
 alias rot47='tr '\''\!-~'\'' '\''P-~\!-O'\'
 alias rr='nc evangelospro.codes 1337'
@@ -29,7 +29,8 @@ alias rmz='rm *.zip'
 alias pcapng-to-pcap='~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/pcapng-to-pcap'
 alias pwndbg='gdb -q -ex init-pwndbg "$@"'
 alias hosts='sudo ~/SCRIPTS/hosts.sh'
-alias chosts='echo ""|sudo tee /etc/hosts'
+alias chosts='echo "127.0.0.1 localhost"|sudo tee /etc/hosts'
+alias navi-update='~/.zsh/scripts/navi-updater.sh'
 
 # venvs for each venv ~/.virtualenvs
 source ~/.zsh/scripts/venvs.zsh
@@ -48,7 +49,7 @@ alias -- -='cd -'
 alias reload='exec zsh -l'
 alias ssh='~/SCRIPTS/ssh'
 alias sshz='~/SCRIPTS/sshz'
-alias mvd='mv ~/Downloads/"$(ls -t ~/Downloads | head -n 1)" .'
+alias mvd='mv ~/Downloads/"$(/usr/bin/ls -t ~/Downloads | head -n 1)" .'
 alias cat='/usr/bin/bat --theme=Dracula'
 alias icat="kitty +kitten icat"
 alias panel="kitty +kitten panel"

@@ -13,7 +13,9 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
 eval '$(~/.zsh/scripts/venv_finder.sh)'
 
-# Uncomment the following line to enable command auto-correction.
+# changed keyboard shortcut
+source ~/.zsh/navi-loader.zsh
+
 ENABLE_CORRECTION="true"
 
 # Loading ZI
@@ -48,7 +50,7 @@ zi light tom-doerr/zsh_codex
 zi ice wait
 zi light RobSis/zsh-completion-generator
 
-# autocompletions addition + fast-syntax-highlighting + zsh-autosuggestions
+# autocompletion additions + fast-syntax-highlighting + zsh-autosuggestions
 zi wait lucid for \
  atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     z-shell/F-Sy-H \
@@ -72,7 +74,7 @@ esac
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-# load aliases at the end to overwrite framework set aliases
+# load aliases at the end to overwrite "framework" set aliases
 source ~/.zsh/aliases.zsh
 
 HISTFILE=~/.zsh/zsh_history.zsh
@@ -94,8 +96,10 @@ setopt GLOBDOTS
 setopt NOTIFY
 setopt AUTOCD
 
+# Source custom functions
 source ~/.zsh/functions.zsh
 
+# Sourcing zsh themes
 # source ~/.zsh/themes/dracula.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

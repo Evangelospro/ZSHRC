@@ -11,7 +11,7 @@ fi
 # evaluting some useful commands
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
-eval '$($ZSH/scripts/venv_finder.sh)'
+eval "$($ZSH/scripts/venv_finder.sh)"
 
 # changed keyboard shortcut in navi
 source $ZSH/navi-loader.zsh
@@ -21,7 +21,7 @@ ENABLE_CORRECTION="true"
 # Loading ZI
 source "${zi_home}/bin/zi.zsh"
 
-# eval '$($ZSH/install.sh)'
+# eval "$($ZSH/install.sh)"
 
 # Using normal load works
 zi depth=1 lucid nocd for \
@@ -89,12 +89,6 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
-
-# Other setopts
-setopt EXTENDED_GLOB
-setopt GLOBDOTS
-setopt NOTIFY
-setopt AUTOCD
 
 # Source custom functions
 source $ZSH/functions.zsh

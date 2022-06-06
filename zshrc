@@ -1,27 +1,27 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of $ZSHrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.zsh/p10k.zsh.
-[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
+# To customize prompt, run `p10k configure` or edit $ZSH/p10k.zsh.
+[[ ! -f $ZSH/p10k.zsh ]] || source $ZSH/p10k.zsh
 
 # evaluting some useful commands
 eval $(thefuck --alias)
 eval "$(zoxide init zsh --no-aliases --hook pwd)"
-eval '$(~/.zsh/scripts/venv_finder.sh)'
+eval '$($ZSH/scripts/venv_finder.sh)'
 
-# changed keyboard shortcut
-source ~/.zsh/navi-loader.zsh
+# changed keyboard shortcut in navi
+source $ZSH/navi-loader.zsh
 
 ENABLE_CORRECTION="true"
 
 # Loading ZI
 source "${zi_home}/bin/zi.zsh"
 
-# eval '$(~/.zsh/install.sh)'
+# eval '$($ZSH/install.sh)'
 
 # Using normal load works
 zi depth=1 lucid nocd for \
@@ -32,7 +32,7 @@ zi ice wait
 zi snippet OMZP::dirhistory
 
 zi ice wait
-zi snippet ~/.zsh/web-search/web-search.zsh
+zi snippet $ZSH/web-search/web-search.zsh
 
 zi ice wait
 zi light MichaelAquilina/zsh-you-should-use
@@ -44,11 +44,11 @@ zi light MichaelAquilina/zsh-auto-notify # requires a gui server like xorg can't
 zi ice wait
 zi light marlonrichert/zsh-autocomplete
 
-zi ice wait
-zi light tom-doerr/zsh_codex
+# zi ice wait
+# zi light tom-doerr/zsh_codex
 
-zi ice wait
-zi light RobSis/zsh-completion-generator
+# zi ice wait
+# zi light RobSis/zsh-completion-generator
 
 # autocompletion additions + fast-syntax-highlighting + zsh-autosuggestions
 zi wait lucid for \
@@ -75,9 +75,9 @@ esac
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # load aliases at the end to overwrite "framework" set aliases
-source ~/.zsh/aliases.zsh
+source $ZSH/aliases.zsh
 
-HISTFILE=~/.zsh/zsh_history.zsh
+HISTFILE=$ZSH/zsh_history.zsh
 SAVEHIST=1000000000
 HISTSIZE=99999
 
@@ -97,10 +97,10 @@ setopt NOTIFY
 setopt AUTOCD
 
 # Source custom functions
-source ~/.zsh/functions.zsh
+source $ZSH/functions.zsh
 
 # Sourcing zsh themes
-# source ~/.zsh/themes/dracula.zsh
+# source $ZSH/themes/dracula.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-~/.zsh/scripts/clear.sh
+$ZSH/scripts/clear.sh

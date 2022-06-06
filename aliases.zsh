@@ -30,10 +30,10 @@ alias pcapng-to-pcap='~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/pcapng-to-pcap'
 alias pwndbg='gdb -q -ex init-pwndbg "$@"'
 alias hosts='sudo ~/SCRIPTS/hosts.sh'
 alias chosts='echo "127.0.0.1 localhost"|sudo tee /etc/hosts'
-alias navi-update='~/.zsh/scripts/navi-updater.sh'
+alias navi-update="$ZSH/scripts/navi-updater.sh"
 
 # venvs for each venv ~/.virtualenvs
-source ~/.zsh/scripts/venvs.zsh
+source $ZSH/scripts/venvs.zsh
 
 # clipboard
 alias copy='xclip -selection clipboard'
@@ -79,7 +79,7 @@ alias tozsh='sudo chsh evangelospro -s /bin/zsh && echo '\''Now log out.'\'
 alias which-command=whence
 alias wmonitor-off='sudo airmon-ng stop wlxd0374563940f'
 alias wmonitor-on='sudo airmon-ng start wlxd0374563940f'
-alias zshconfig="code ~/.zsh"
+alias zshconfig="code $ZSH"
 alias pip='noglob pip'
 alias p='python3'
 alias docker-clean='docker system prune -f'
@@ -91,6 +91,6 @@ alias ip='ip -color -brief'
 alias o='xdg-open'
 alias tree='tree -a -I .git --dirsfirst'
 alias utc='env TZ=UTC date'
-alias clear='~/.zsh/scripts/clear.sh'
+alias clear="$ZSH/scripts/clear.sh"
 alias md='mdv'
 alias git-update="find . -name .git -type d -print -prune -exec git --git-dir '{}' fetch --all ';'"

@@ -96,5 +96,10 @@ source $ZSH/functions.zsh
 # Sourcing zsh themes
 # source $ZSH/themes/dracula.zsh
 
+# Bindings
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[3~' delete-char
+
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 $ZSH/scripts/clear.sh

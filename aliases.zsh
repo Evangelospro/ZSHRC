@@ -5,35 +5,39 @@ alias s='sudo !!'
 alias thm="~/.local/bin/thm/thm"
 alias htb="~/.local/bin/htb/htb"
 
-# CTF TOOLS
-alias stego="~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/stego/stego"
-alias steganabara="~/Desktop/CTF/CTF-TOOLS/Stego/Steganabara/run"
+# HACKING TOOLS
+alias stego="~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/stego/stego"
+alias steganabara="~/Desktop/HACKING/HACKING-TOOLS/Stego/Steganabara/run"
 alias wireshark="wireshark-gtk"
-alias pwndocker='~/SCRIPTS/CTF\ Automation/pwndocker.sh'
-alias pwnsetup='python3 ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/pwnsetup'
-alias penelope='python3 ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/penelope/penelope.py -r ~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/penelope/extras/penelope.conf'
+alias pwnsetup='python3 ~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/pwnsetup'
+alias penelope='python3 ~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/penelope/penelope.py -r ~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/penelope/extras/penelope.conf'
 alias cerbrutus='python3 ~/.local/bin/cerbrutus/cerbrutus.py'
-alias autorecon='sudo python3 ~/Desktop/CTF/CTF-TOOLS/AutoRecon/autorecon.py --dirbuster.tool feroxbuster --dirbuster.wordlist /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt --only-scans-dir --single-target'
+alias autorecon='sudo python3 ~/Desktop/HACKING/HACKING-TOOLS/AutoRecon/autorecon.py --dirbuster.tool feroxbuster --dirbuster.wordlist /usr/share/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt --only-scans-dir --single-target'
 alias rot13='tr '\''A-Za-z'\'' '\''N-ZA-Mn-za-m'\'
 alias rot47='tr '\''\!-~'\'' '\''P-~\!-O'\'
 alias rr='nc evangelospro.codes 1337'
-alias webserver='updog -p 8080'
+alias webserver='updog -p 8000'
+alias rustscan='rustscan --ulimit 5000 -a'
 alias pwncompile='gcc -fno-stack-protector -z execstack -no-pie'
-alias ctfinit='python3 ~/SCRIPTS/CTF\ Automation/get_active_discord_ctf_challs.py'
-alias mobsf='~/Desktop/CTF/CTF-TOOLS/Mobile/Mobile-Security-Framework-MobSF/run.sh'
-alias ctfgmount='~/SCRIPTS/CTF\ Automation/ctfgmountandsymlink.sh'
-alias ctfumount='~/SCRIPTS/CTF\ Automation/ctfumount.sh'
+alias pwndocker='~/Desktop/HACKING/CTF\ Automation/pwndocker.sh'
+alias ctfinit='python3 ~/Desktop/HACKING/CTF\ Automation/get_active_discord_ctf_challs.py'
+alias mobsf='~/Desktop/HACKING/HACKING-TOOLS/Mobile/Mobile-Security-Framework-MobSF/run.sh'
+alias ctfgmount='~/Desktop/HACKING/CTF\ Automation/ctfgmountandsymlink.sh'
+alias ctfumount='~/Desktop/HACKING/CTF\ Automation/ctfumount.sh'
 alias curl='curlie'
 alias rm='trash-put'
 alias rmz='rm *.zip'
-alias pcapng-to-pcap='~/Desktop/CTF/CTF-TOOLS/Setup-Scripts/pcapng-to-pcap'
+alias pcapng-to-pcap='~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/pcapng-to-pcap'
 alias pwndbg='gdb -q -ex init-pwndbg "$@"'
-alias hosts='sudo ~/SCRIPTS/hosts.sh'
+alias hosts='sudo ~/Desktop/HACKING/hosts.sh'
 alias chosts='echo "127.0.0.1 localhost"|sudo tee /etc/hosts'
 alias navi-update="$ZSH/scripts/navi-updater.sh"
 
 # venvs for each venv ~/.virtualenvs
 source $ZSH/scripts/venvs.zsh
+
+# Grub
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # clipboard
 alias copy='xclip -selection clipboard'

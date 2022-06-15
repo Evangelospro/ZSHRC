@@ -24,3 +24,6 @@ export _ZO_DATA_DIR="$ZSH/zoxide"
 skip_global_compinit=1
 
 export zi_home="$ZSH/.zi"
+
+export VISUAL=code;
+export EDITOR=code;

@@ -5,6 +5,9 @@ alias s='sudo !!'
 alias thm="~/.local/bin/thm/thm"
 alias htb="~/.local/bin/htb/htb"
 
+# Seafile exec workaround
+alias r=~/SCRIPTS/r
+
 # HACKING TOOLS
 alias stego="~/Desktop/HACKING/HACKING-TOOLS/Setup-Scripts/stego/stego"
 alias steganabara="~/Desktop/HACKING/HACKING-TOOLS/Stego/Steganabara/run"
